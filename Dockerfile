@@ -17,8 +17,3 @@ RUN mkdir -p ~/.kube
 COPY s3-sync.sh /s3-sync.sh
 RUN chmod +x /s3-sync.sh
 CMD ["/s3-sync.sh"]
-
-
-
-#ENTRYPOINT [ "/bin/sh", "-c", "aws s3 sync s3://airflow-stg-s3-log-bucket/airflow_home/dags/ /opt/airflow/dags" ]
-#ENTRYPOINT ["tail", "-f", "/dev/null"]
