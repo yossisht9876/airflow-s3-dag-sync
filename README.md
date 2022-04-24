@@ -22,5 +22,5 @@ add to the chart value.yaml file under ExtraContainers part:
       imagePullPolicy: Always
       volumeMounts:
         - mountPath: "/opt/airflow/dags"
-          name: dags-data ```
+          name: dags-data
 
