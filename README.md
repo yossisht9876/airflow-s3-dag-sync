@@ -8,15 +8,15 @@ base on airflow chart:
 https://artifacthub.io/packages/helm/airflow-helm/airflow
 
 
-use:
+usege:
 
-docker build -t <iamgename>:<tag>
+``` docker build -t <iamge-name>:<tag> ```
 
 
 add to the chart value.yaml file under ExtraContainers part:
   * the dags folder must be mounted 
 
- ```extraContainers:
+``` extraContainers:
     - name: s3-sync
       image: <iamge-name>:<tag>
       imagePullPolicy: Always
