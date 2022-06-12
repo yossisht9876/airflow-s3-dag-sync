@@ -4,18 +4,18 @@ while true; do
 # checking if new file added to the bucket - if yes - it will upload it the dag bag
 
 account_id=$(aws sts get-caller-identity --query "Account" --output text)
-if [ $account_id == "458600517589" ];
+if [ $account_id == "45689" ];
 then
   BUCKET_NAME="airflow-prod-dags"
-  aws s3 ls "lusha-airflow-prod-dags" --recursive | awk '{if ($3 !=0) print "s3://airflow-prod-dags/"$4}' > s3.txt
-elif [ $account_id == "716811407690" ];
+  aws s3 ls "airflow-prod-dags" --recursive | awk '{if ($3 !=0) print "s3://airflow-prod-dags/"$4}' > s3.txt
+elif [ $account_id == "716890" ];
 then
   BUCKET_NAME="airflow-stg-dags"
-  aws s3 ls "lusha-airflow-stg-dags" --recursive | awk '{if ($3 !=0) print "s3://airflow-stg-dags/"$4}' > s3.txt
-elif [ $account_id == "104001504630" ];
+  aws s3 ls "airflow-stg-dags" --recursive | awk '{if ($3 !=0) print "s3://airflow-stg-dags/"$4}' > s3.txt
+elif [ $account_id == "1630" ];
 then
   BUCKET_NAME="airflow-dev-dags"
-  aws s3 ls "lusha-airflow-dev-dags" --recursive | awk '{if ($3 !=0) print "s3://airflow-dev-dags/"$4}' > s3.txt
+  aws s3 ls "airflow-dev-dags" --recursive | awk '{if ($3 !=0) print "s3://airflow-dev-dags/"$4}' > s3.txt
 fi
 
 while IFS= read -r file; do
